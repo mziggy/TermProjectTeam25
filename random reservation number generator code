@@ -1,0 +1,3 @@
+	srand(time(NULL));
+	int number = rand()%9000000000 + 1000000000;
+	std::cout << number;
