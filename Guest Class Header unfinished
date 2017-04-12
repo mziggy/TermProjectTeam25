@@ -1,0 +1,47 @@
+#ifndef groupproject_h
+#define groupproject_h
+#include <time.h>
+#include <stdlib.h> 
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+class guest{
+private:
+	int resNumber;
+	string nameLast;
+	string nameFirst;
+	int lengthOfStay;
+	bool parking;
+
+public:
+	void createGuestRecord();//creates reservation number and asks questions about customer info (credit card)
+	void sortGuests(int resNumber);//allows administrator to choose what type of sort they want and then it calls sort method
+	void sortAlphabetically(int resNumber); //sorts records by guest's last name
+	void sortResnumber(int resNumber);//sorts by reservation number
+	void paymentRecord(int resNumber);//calls up payment records (whether they've paid and how much they have to pay)
+	bool checkPay(int resNumber);//returns true if they've paid already
+	int	calculatePay(int resNumber);//calculates how much they have to pay (length of stay)*room price + $15 * number of cars
+	void deleteGuestRecord(); //deletes the guest record and frees up the reservation number
+	
+};
+
+
+#endif
+/*
++ void createGuestRecord(string nameLast, string nameFirst, string paymentMethod)
++ void createPaymentRecord(Reservation reservation, bool paid)
++ void viewBill(Reservation reservation, Parking parkingSpace, int lengthOfStay, Room roomType)
++ void sortGuests()
++ string getNameLast()
++ string getNameFirst()
++ int getLengthOfStay()
++ int setLengthOfStay(int lengthOfStay)
++ bool getPaid()
++ bool setPaid(bool paid)
++ string getPaymentMethod()
++ string setPaymentMethod(string paymentMethod)
++ int getParkingSpaces()
++ int setParkingSpaces(int parkingSpaces)
+*/
